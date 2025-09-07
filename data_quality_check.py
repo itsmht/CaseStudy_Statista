@@ -23,7 +23,7 @@ df_q.head()
 
 # 1. Accuracy (LLM check: inactive company with revenue)
 import os
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBSRjRRYmFDJ6XGgGrdS4QFFQksWfO1D0o"
+os.environ["GOOGLE_API_KEY"] = ""
 genai.configure(api_key=os.environ["GOOGLE_API_KEY"])
 def gemini_accuracy_check(row):
     if row["operationstatustype"] == "INACTIVE" and pd.notnull(row["REVENUE"]) and row["REVENUE"] > 0:
